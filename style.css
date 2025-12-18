@@ -145,10 +145,6 @@ textarea {
   background-color: var(--card);
   color: var(--text-muted);
   font-size: medium;
-  /* Prevent horizontal overflow of long text and preserve wrapping */
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: anywhere;
 }
 
 textarea {
