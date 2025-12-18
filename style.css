@@ -29,9 +29,10 @@ body {
   background: var(--card);
   padding: 24px;
   border-radius: 16px;
-  max-width: 360px;
+  max-width: 420px;
   width: 100%;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  margin: 0 auto;
 }
 
 .header {
@@ -44,6 +45,8 @@ body {
   gap: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
+  align-items: center;
+  justify-items: center;
 }
 
 .cell {
@@ -57,7 +60,8 @@ body {
   font-size: medium;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.1s;
-  position: relative;
+  aspect-ratio: 1 / 1;
+  min-height: 48px;
 }
 
 .cell:hover {
@@ -278,4 +282,14 @@ body.dark {
   --missed: #7a3f3f;
   --accent: #7aa2c8;
   --button-bg: #3a3a3c;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
 }
