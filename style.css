@@ -146,6 +146,7 @@ textarea {
   background-color: var(--card);
   color: var(--text-muted);
   font-size: medium;
+  text-align: right;
 }
 /* 
 textarea {
