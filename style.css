@@ -1,0 +1,281 @@
+:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --border: #e2e2de;
+  --text-main: #2f2f2f;
+  --text-muted: #777;
+  --date-color: #999;
+  --success: #b7e4c7;
+  --missed: #f6c1c1;
+  --accent: #6b8eae;
+  --button-bg: #e7e7e7; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  color: var(--text-main);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.app {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.header {
+  padding: 0 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  position: relative;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  position: relative;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+}
+
+/* .cell {
+  position: relative;
+} */
+.cell.success {
+  background-color: var(--success);
+}
+
+.cell.missed {
+  background-color: var(--missed);
+}
+
+.date-label {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: smaller;
+  color: var(--date-color);
+}
+
+button {
+  margin-top: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: var(--text-main);
+  background-color: var(--button-bg);
+  border-radius: 6px;
+  border: none;
+  font-size: small;
+}
+
+.today {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+h1 {
+  margin: 0;
+  font-size: large;
+  font-weight: 500;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size:medium;
+  font-weight: 500;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+label {
+  font-size: medium;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+input[type="date"],
+textarea {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  background-color: var(--card);
+  color: var(--text-muted);
+  font-size: medium;
+}
+
+textarea {
+  resize: vertical;
+  text-align: right;
+  background-color: var(--card);
+  color: var(--text-muted);
+  font-size: medium;
+}
+
+/* .theme-toggle {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+} */
+
+/* Toggle Switch */
+/* Container for the toggle */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+/* Hide default checkbox */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The track */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s;
+}
+
+/* The circular slider */
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    /* transition: transform 0.3s; */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Toggled state */
+.toggle-switch input:checked+.slider {
+    background-color: #4caf50;
+}
+
+.toggle-switch input:checked+.slider::before {
+    transform: translateX(21px);
+}
+
+/* ===== Toggle Icons ===== */
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: small;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #fbc02d;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Moon */
+.moon {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #b0bec5;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+/* Moon cut-out */
+.moon::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--bg);
+  border-radius: 50%;
+}
+
+/* When dark mode is active */
+.toggle-switch input:checked + .slider .sun {
+  opacity: 0;
+}
+
+.toggle-switch input:checked + .slider .moon {
+  opacity: 1;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark {
+  --bg: #1c1c1e;
+  --card: #2c2c2e;
+  --border: #3a3a3c;
+  --text-main: #f2f2f7;
+  --text-muted: #9a9a9c;
+  --success: #3a7f5d;
+  --missed: #7a3f3f;
+  --accent: #7aa2c8;
+  --button-bg: #3a3a3c;
+}

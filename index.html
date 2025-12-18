@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<div class="app">
+<html>
+  <head>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+
+  <div>
+    <h1>30 days</h1>
+  </div>
+
+  <div>
+    <h2>Goal</h2>
+    <textarea id="goal" rows="1" cols="30" placeholder="Write your goal here!"></textarea>
+  </div>
+
+<label>
+  Start date:
+  <input type="date" id="startDate">
+</label>
+
+<div class="grid" id="grid"></div>
+
+<div class="controls">
+  <button id="resetButton">Reset</button>
+
+  <label class="toggle-switch">
+    <input type="checkbox" id="darkToggle">
+    <span class="slider">
+      <span class="sun"></span>
+      <span class="moon"></span>
+    </span>
+    <!-- Dark mode -->
+  </label>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+</div>
