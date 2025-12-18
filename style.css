@@ -42,7 +42,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: repeat(5, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
   gap: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -63,15 +64,17 @@ body {
   transition: background-color 0.2s, transform 0.1s;
   aspect-ratio: 1 / 1;
   min-height: 48px;
+  /* Important for preventing overflow inside grid items */
+  min-width: 0;
+  flex-shrink: 1;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .cell:hover {
   transform: scale(1.1);
 }
 
-/* .cell {
-  position: relative;
-} */
 .cell.success {
   background-color: var(--success);
 }
@@ -131,6 +134,8 @@ label {
 input[type="date"],
 textarea {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 6px;
   padding: 8px;
@@ -140,6 +145,10 @@ textarea {
   background-color: var(--card);
   color: var(--text-muted);
   font-size: medium;
+  /* Prevent horizontal overflow of long text and preserve wrapping */
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 textarea {
@@ -285,12 +294,27 @@ body.dark {
   --button-bg: #3a3a3c;
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .app {
     padding: 16px;
   }
 
   h1 {
     font-size: 1.25rem;
+  }
+} */
+/* Slightly smaller grid cells on very small phones */
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+    gap: 8px;
+  }
+
+  body {
+    padding: 16px;
+  }
+
+  .app {
+    padding: 12px;
   }
 }
