@@ -133,6 +133,7 @@ label {
 
 input[type="date"],
 textarea {
+  /* resize: vertical; */
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -146,14 +147,14 @@ textarea {
   color: var(--text-muted);
   font-size: medium;
 }
-
+/* 
 textarea {
   resize: vertical;
   text-align: right;
   background-color: var(--card);
   color: var(--text-muted);
   font-size: medium;
-}
+} */
 
 /* .theme-toggle {
   font-size: 12px;
@@ -314,10 +315,10 @@ body.dark {
     padding: 12px;
   }
 }
-/* Ensure date input can shrink on narrow screens */
+/* Ensure date input can shrink on narrow screens
 input[type="date"] {
   min-width: 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-}
+} */
