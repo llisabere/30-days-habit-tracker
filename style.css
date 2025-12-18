@@ -36,9 +36,9 @@ body {
   margin: 0 auto;
 }
 
-.header {
+/* .header {
   padding: 0 4px;
-}
+} */
 
 .grid {
   display: grid;
@@ -317,4 +317,11 @@ body.dark {
   .app {
     padding: 12px;
   }
+}
+/* Ensure date input can shrink on narrow screens */
+input[type="date"] {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }

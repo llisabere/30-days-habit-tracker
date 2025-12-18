@@ -2,25 +2,26 @@
 <div class="app">
 <html>
   <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habit Tracker</title>
     <link rel="stylesheet" href="style.css">
   </head>
 <body>
+  <div class="app">
+    <div class="header">
+      <h1>30 days</h1>
+    </div>
 
-  <div>
-    <h1>30 days</h1>
-  </div>
+    <div>
+      <h2>Goal</h2>
+      <textarea id="goal" rows="1" placeholder="Write your goal here!"></textarea>
+    </div>
 
-  <div>
-    <h2>Goal</h2>
-    <textarea id="goal" rows="1" cols="30" placeholder="Write your goal here!"></textarea>
-  </div>
-
-<label>
-  Start date:
-  <input type="date" id="startDate">
-</label>
+    <label>
+      Start date:
+      <input type="date" id="startDate">
+    </label>
 
 <div class="grid" id="grid"></div>
 
@@ -35,6 +36,7 @@
     </span>
     <!-- Dark mode -->
   </label>
+</div>
 </div>
 
 <script src="script.js"></script>
