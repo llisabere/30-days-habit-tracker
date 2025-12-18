@@ -10,4 +10,4 @@ A simple habit tracker built with vanilla HTML, CSS, and JavaScript.
 - Responsive design
 
 ## Live Demo
-https://yourusername.github.io/30-days-habit-tracker/
+https://llisabere.github.io/30-days-habit-tracker/
