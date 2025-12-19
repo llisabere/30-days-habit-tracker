@@ -127,6 +127,9 @@ resetButton.addEventListener("click", () => {
   goal.value = "";
   startDateInput.value = "";
 
+  document.body.classList.remove("dark");
+  darkToggle.checked = false;
+
   init();
 });
 
