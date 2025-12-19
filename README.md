@@ -11,3 +11,8 @@ A simple habit tracker built with vanilla HTML, CSS, and JavaScript.
 
 ## Live Demo
 https://llisabere.github.io/30-days-habit-tracker/
+
+## Screenshots
+![Safari look on iPhone](screenshots/iphone_summ.png)
+
+![Safari look on MacBook](screenshots/safari_summ.png)
