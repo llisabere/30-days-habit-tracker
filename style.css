@@ -316,10 +316,25 @@ body.dark {
     padding: 12px;
   }
 }
-/* Ensure date input can shrink on narrow screens
-input[type="date"] {
-  min-width: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-} */
+/* --- Mobile Specific Fixes (Screens smaller than 768px) --- */
+@media screen and (max-width: 768px) {
+  input[type="date"],
+  textarea {
+    /* 16px font prevents iOS from zooming in and breaking the layout width */
+    font-size: 16px; 
+    
+    /* Removes default Safari shadows and rounded corners */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="date"] {
+    /* Forces the date text/icon to align right on iOS Safari */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    /* Safari sometimes adds a default height to date inputs that is too small */
+    min-height: 44px; 
+  }
+}
